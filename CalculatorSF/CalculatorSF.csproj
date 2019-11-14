@@ -87,6 +87,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Core\Calculations\ExpressionCalculator.cs" />
     <Compile Include="Core\Calculations\ICalculator.cs" />
     <Compile Include="ViewModels\Bases\ViewModelBase.cs" />

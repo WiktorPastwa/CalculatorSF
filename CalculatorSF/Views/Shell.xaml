@@ -84,7 +84,8 @@
                 Content="-"/>
         <Button Grid.Column="5"
                 Grid.Row="3"
-                Content="="/>
+                Content="="
+                Command="{Binding EqualsCommand}"/>
 
         <Button Grid.Column="1"
                 Grid.Row="4"

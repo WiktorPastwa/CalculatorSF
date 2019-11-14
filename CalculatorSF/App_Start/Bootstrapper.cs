@@ -21,5 +21,11 @@ namespace CalculatorSF.App_Start
         {
             Application.Current.MainWindow.Show();
         }
+
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+            Container.RegisterInstances();
+        }
     }
 }
