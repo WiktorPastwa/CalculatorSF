@@ -25,7 +25,7 @@ namespace CalculatorSF.App_Start
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
-            Container.RegisterInstances();
+            Container.RegisterInstances().RegisterSingletons();
         }
     }
 }

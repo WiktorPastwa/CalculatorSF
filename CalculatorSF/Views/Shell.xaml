@@ -1,17 +1,55 @@
-﻿<Window x:Class="CalculatorSF.Views.Shell"
+﻿<mah:MetroWindow x:Class="CalculatorSF.Views.Shell"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalculatorSF.Views"
         xmlns:prism="http://prismlibrary.com/"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:constants="clr-namespace:CalculatorSF.Core.Constants"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" 
-        Height="275" Width="310">
+        Height="320" Width="310">
 
     <Window.Resources>
         <ResourceDictionary Source="../Styles/Calculators/BasicCalculator.xaml"/>
+        
     </Window.Resources>
-    <ContentControl Content="{Binding SelectedCalculatorViewModel}"/>
-</Window>
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Background="White" 
+                        BorderThickness="0"
+                        Command="{Binding OpenFlyoutCommand}">
+                    <Button.Content>
+                        <fa:ImageAwesome Height="20" Width="20" Icon="Bars"/>
+                    </Button.Content>
+                </Button>
+                <Label FontSize="20" 
+                       FontWeight="Bold"
+                       VerticalAlignment="Bottom"
+                       Content="{Binding SelectedCalculatorViewModel.CalculatorType}"/>
+            </StackPanel>
+            <ContentControl Content="{Binding SelectedCalculatorViewModel}"/>
+        </StackPanel>
+        <mah:Flyout Position="Left" 
+                    Width="150"
+                    IsOpen="{Binding FlyoutOpen}">
+            <ListBox x:Name="ListBox" 
+                     ItemsSource="{x:Static constants:Calculators.CalculatorTypes}"
+                     DisplayMemberPath="DisplayName">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding CalculatorChangeCommand}"
+                                               CommandParameter="{Binding ElementName=ListBox, Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListBox>
+        </mah:Flyout>
+    </Grid>
+    
+</mah:MetroWindow>
