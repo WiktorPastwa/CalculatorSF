@@ -12,8 +12,11 @@ namespace CalculatorSF.ViewModels.Bases
         protected ViewModelBase()
         {
             RegisterCommands();
+            RegisterCollections();
         }
 
         protected virtual void RegisterCommands() { }
+
+        public virtual void RegisterCollections() { }
     }
 }

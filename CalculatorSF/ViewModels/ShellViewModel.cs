@@ -20,6 +20,7 @@ namespace CalculatorSF.ViewModels
         public  ShellViewModel(IContainerHelper containerHelper)
         {
             _containerHelper = containerHelper;
+            CalculatorChanged(CalculatorSF.Core.Constants.Calculators.Basic);
         }
 
         public string Title { get; } = "Calculator";
@@ -38,18 +39,26 @@ namespace CalculatorSF.ViewModels
             set { SetProperty(ref _flyoutOpen, value); }
         }
 
-        public DelegateCommand OpenFlyoutCommand { get; set; }
+        private bool _bottomFlyoutOpen;
+        public bool BottomFlyoutOpen 
+        {
+            get { return _bottomFlyoutOpen; }
+            set { SetProperty(ref _bottomFlyoutOpen, value); }
+        }
+
+        public DelegateCommand<string> OpenFlyoutCommand { get; set; }
         public DelegateCommand<CalculatorType> CalculatorChangeCommand { get; set; }
 
         protected override void RegisterCommands()
         {
-            OpenFlyoutCommand = new DelegateCommand(OpenFlyout);
+            OpenFlyoutCommand = new DelegateCommand<string>(OpenFlyout);
             CalculatorChangeCommand = new DelegateCommand<CalculatorType>(CalculatorChanged);
         }
 
-        private void OpenFlyout()
+        private void OpenFlyout(string propertyName)
         {
-            FlyoutOpen = true;
+            var property = GetType().GetProperty(propertyName);
+            property.SetValue(this, true);
         }
 
         private void CalculatorChanged(CalculatorType calculatorType)

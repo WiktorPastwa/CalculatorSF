@@ -5,17 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using CalculatorSF.Core.Calculations;
 using CalculatorSF.ViewModels.Bases;
-using Prism.Commands;
 
 namespace CalculatorSF.ViewModels.Calculators
 {
-    public class BasicCalculatorViewModel : CalculatorViewModel
+    public class ScientificCalculatorViewModel : CalculatorViewModel
     {
-        public BasicCalculatorViewModel(ICalculator calculator):base(calculator)
-        {
-            
-        }
+        public override string CalculatorType => "Scientific";
 
-        public override string CalculatorType => "Basic";
+        public ScientificCalculatorViewModel(ICalculator calculator) : base(calculator)
+        {
+
+        }
     }
 }
