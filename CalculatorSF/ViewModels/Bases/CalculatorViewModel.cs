@@ -29,7 +29,9 @@ namespace CalculatorSF.ViewModels.Bases
         }
 
         public abstract string CalculatorType { get; }
-    
+        public abstract int height { get; set; }
+        public abstract int width { get; set; }
+
         public ICollection<CalculationModel> Calculations { get; protected set; }
 
         public override void RegisterCollections()
@@ -48,7 +50,7 @@ namespace CalculatorSF.ViewModels.Bases
             EqualsCommand = new DelegateCommand(Calculate);
         }
 
-        private void Calculate()
+        protected virtual void Calculate()
         {
             var value = _calculator.Calculate(Expression).ToString("N1");
             var calculation = new CalculationModel(Expression, value);
@@ -57,7 +59,7 @@ namespace CalculatorSF.ViewModels.Bases
             Calculations.Add(calculation);
         }
 
-        private void AddNumber(string buttonValue)
+        protected virtual void AddNumber(string buttonValue)
         {
             if (hasCalculated)
             {
@@ -67,7 +69,7 @@ namespace CalculatorSF.ViewModels.Bases
             Expression += buttonValue;
         }
 
-        private void Clear()
+        protected virtual void Clear()
         {
             Expression = string.Empty;
         }

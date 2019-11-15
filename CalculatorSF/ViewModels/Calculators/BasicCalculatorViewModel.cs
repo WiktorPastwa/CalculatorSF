@@ -11,11 +11,13 @@ namespace CalculatorSF.ViewModels.Calculators
 {
     public class BasicCalculatorViewModel : CalculatorViewModel
     {
+        public override string CalculatorType => "Basic";
+        public override int height { get; set; } = 300;
+        public override int width { get; set; } = 310;
+
         public BasicCalculatorViewModel(ICalculator calculator):base(calculator)
         {
             
         }
-
-        public override string CalculatorType => "Basic";
     }
 }

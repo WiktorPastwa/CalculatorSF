@@ -12,10 +12,16 @@
         mc:Ignorable="d"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" 
-        Height="320" Width="310">
+        Height="{Binding SelectedCalculatorViewModel.height, Mode=TwoWay}" 
+        Width="{Binding SelectedCalculatorViewModel.width, Mode=TwoWay}">
 
     <Window.Resources>
-        <ResourceDictionary Source="../Styles/Calculators/BasicCalculator.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Calculators/BasicCalculator.xaml"/>
+                <ResourceDictionary Source="../Styles/Calculators/ScientificCalculator.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
 
     <Grid>

@@ -10,6 +10,8 @@ namespace CalculatorSF.ViewModels.Interfaces
     public interface ICalculatorViewModel
     {
         string CalculatorType { get;}
+        int height { get; set; }
+        int width { get; set; }
 
         ICollection<CalculationModel> Calculations { get; }
     }

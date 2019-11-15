@@ -99,11 +99,15 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Core\Calculations\ExpressionCalculator.cs" />
     <Compile Include="Core\Calculations\ICalculator.cs" />
+    <Compile Include="Core\Constants\CalculatorButtons.cs" />
     <Compile Include="Core\Constants\Calculators.cs" />
     <Compile Include="Core\Helpers\ContainerHelper.cs" />
     <Compile Include="Core\Helpers\IContainerHelper.cs" />
+    <Compile Include="Model\Button.cs" />
     <Compile Include="Model\CalculationModel.cs" />
+    <Compile Include="Model\CalculatorButtons.cs" />
     <Compile Include="Model\CalculatorType.cs" />
+    <Compile Include="Model\SuperScriptButton.cs" />
     <Compile Include="ViewModels\Bases\CalculatorViewModel.cs" />
     <Compile Include="ViewModels\Bases\ViewModelBase.cs" />
     <Compile Include="ViewModels\Calculators\BasicCalculatorViewModel.cs" />
