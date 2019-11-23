@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewModel="clr-namespace:CalculatorSF.ViewModels.Calculators"
                     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
+
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
@@ -33,68 +34,30 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Grid.ColumnSpan="5"
-                 Grid.Column="1"
-                 Grid.Row="1"
-                 Text="{Binding Expression}"/>
+            <!-- ROW [1] -->
+            <TextBox Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="1" Text="{Binding Expression}"/>
+            <!-- ROW [2] -->
+            <Button Grid.Column="1" Grid.Row="2" Content="7"/>
+            <Button Grid.Column="2" Grid.Row="2" Content="8"/>
+            <Button Grid.Column="3" Grid.Row="2" Content="9"/>
+            <Button Grid.Column="4" Grid.Row="2" Content="+"/>
+            <Button Grid.Column="5" Grid.Row="2" Content="CE" Command="{Binding ClearCommand}"/>
+            <!-- ROW [3] -->
+            <Button Grid.Column="1" Grid.Row="3" Content="4"/>
+            <Button Grid.Column="2" Grid.Row="3" Content="5"/>
+            <Button Grid.Column="3" Grid.Row="3" Content="6"/>
+            <Button Grid.Column="4" Grid.Row="3" Content="-"/>
+            <Button Grid.Column="5" Grid.Row="3" Content="=" Command="{Binding EqualsCommand}"/>
+            <!-- ROW [4] -->
+            <Button Grid.Column="1" Grid.Row="4" Content="1"/>
+            <Button Grid.Column="2" Grid.Row="4" Content="2"/>
+            <Button Grid.Column="3" Grid.Row="4" Content="3"/>
+            <Button Grid.Column="4" Grid.Row="4" Content="*"/>
+            <!-- ROW [5] -->
+            <Button Grid.Column="1" Grid.Row="5" Content="0" Grid.ColumnSpan="2"/>
+            <Button Grid.Column="3" Grid.Row="5" Content="."/>
+            <Button Grid.Column="4" Grid.Row="5" Content="/"/>
 
-            <Button Grid.Column="1"
-                Grid.Row="2"
-                Content="7"/>
-            <Button Grid.Column="2"
-                Grid.Row="2"
-                Content="8"/>
-            <Button Grid.Column="3"
-                Grid.Row="2"
-                Content="9"/>
-            <Button Grid.Column="4"
-                Grid.Row="2"
-                Content="+"/>
-            <Button Grid.Column="5"
-                Grid.Row="2"
-                Content="CE"
-                Command="{Binding ClearCommand}"/>
-
-            <Button Grid.Column="1"
-                Grid.Row="3"
-                Content="4"/>
-            <Button Grid.Column="2"
-                Grid.Row="3"
-                Content="5"/>
-            <Button Grid.Column="3"
-                Grid.Row="3"
-                Content="6"/>
-            <Button Grid.Column="4"
-                Grid.Row="3"
-                Content="-"/>
-            <Button Grid.Column="5"
-                Grid.Row="3"
-                Content="="
-                Command="{Binding EqualsCommand}"/>
-
-            <Button Grid.Column="1"
-                Grid.Row="4"
-                Content="1"/>
-            <Button Grid.Column="2"
-                Grid.Row="4"
-                Content="2"/>
-            <Button Grid.Column="3"
-                Grid.Row="4"
-                Content="3"/>
-            <Button Grid.Column="4"
-                Grid.Row="4"
-                Content="*"/>
-
-            <Button Grid.ColumnSpan="2"
-                Grid.Column="1"
-                Grid.Row="5"
-                Content="0"/>
-            <Button Grid.Column="3"
-                Grid.Row="5"
-                Content="."/>
-            <Button Grid.Column="4"
-                Grid.Row="5"
-                Content="/"/>
         </Grid>
     </DataTemplate>
 </ResourceDictionary>

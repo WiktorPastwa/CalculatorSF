@@ -99,7 +99,6 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Core\Calculations\ExpressionCalculator.cs" />
     <Compile Include="Core\Calculations\ICalculator.cs" />
-    <Compile Include="Core\Constants\CalculatorButtons.cs" />
     <Compile Include="Core\Constants\Calculators.cs" />
     <Compile Include="Core\Helpers\ContainerHelper.cs" />
     <Compile Include="Core\Helpers\IContainerHelper.cs" />

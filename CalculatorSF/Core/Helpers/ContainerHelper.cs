@@ -10,13 +10,18 @@ namespace CalculatorSF.Core.Helpers
 {
     public class ContainerHelper : IContainerHelper
     {
+        #region Fields
         private readonly IUnityContainer _container;
+        #endregion
 
+        #region Constructors
         public ContainerHelper(IUnityContainer container)
         {
             _container = container;
         }
+        #endregion
 
+        #region public/protected Methods
         public object Create(string typeName)
         {
             var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(x => x.Name == typeName);
@@ -25,5 +30,6 @@ namespace CalculatorSF.Core.Helpers
 
             return _container.Resolve(type);
         }
+        #endregion
     }
 }

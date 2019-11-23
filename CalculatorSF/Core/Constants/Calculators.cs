@@ -9,6 +9,7 @@ namespace CalculatorSF.Core.Constants
 {
     public static class Calculators
     {
+        #region Fields
         public static CalculatorType Basic => CalculatorType.Create("Basic", "BasicCalculatorViewModel");
         public static CalculatorType Scientific => CalculatorType.Create("Scientific", "ScientificCalculatorViewModel");
 
@@ -17,5 +18,6 @@ namespace CalculatorSF.Core.Constants
             Basic,
             Scientific
         };
+        #endregion
     }
 }
