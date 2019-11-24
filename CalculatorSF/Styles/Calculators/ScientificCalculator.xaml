@@ -33,14 +33,13 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <!-- ROW [0] -->
             <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Text="{Binding Expression}"/>
             <!-- ROW [1] -->
-            <Button Grid.Row="1" Grid.Column="1">
+            <Button Grid.Row="1" Grid.Column="1" Command="{Binding PowerOfNumber2Command}">
                 <Button.Content>
                     <TextBlock>
                         <Run>X</Run>
@@ -48,7 +47,7 @@
                     </TextBlock>
                 </Button.Content>
             </Button>
-            <Button Grid.Row="1" Grid.Column="2">
+            <Button Grid.Row="1" Grid.Column="2" Command="{Binding PowerOfNumberCommand}">
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="X"/>
@@ -60,51 +59,37 @@
                     </StackPanel>
                 </Button.Content>
             </Button>
-            <Button Grid.Row="1" Grid.Column="3" Content="sin"/>
-            <Button Grid.Row="1" Grid.Column="4" Content="cos"/>
-            <Button Grid.Row="1" Grid.Column="5" Content="tan"/>
+            <Button Grid.Row="1" Grid.Column="3" Content="sin" Command="{Binding TrigonometricCommand}"/>
+            <Button Grid.Row="1" Grid.Column="4" Content="cos" Command="{Binding TrigonometricCommand}"/>
+            <Button Grid.Row="1" Grid.Column="5" Content="tan" Command="{Binding TrigonometricCommand}"/>
             <!-- ROW [2] -->
             <Button Grid.Row="2" Grid.Column="1" Content="√"/>
-            <Button Grid.Row="2" Grid.Column="2">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="10"/>
-                    <TextBlock>
-                        <Span BaselineAlignment="TextTop" FontSize="7">
-                            <TextBlock Text="x"/>
-                        </Span>
-                    </TextBlock>
-                </StackPanel>
-            </Button>
-            <Button Grid.Row="2" Grid.Column="3" Content="Exp"/>
-            <Button Grid.Row="2" Grid.Column="4" Content="Mod"/>
-            <Button Grid.Row="2" Grid.Column="5" Content="CE"/>
+            <Button Grid.Row="2" Grid.Column="2" Content="π"/>
+            <Button Grid.Row="2" Grid.Column="3" Content="("/>
+            <Button Grid.Row="2" Grid.Column="4" Content=")"/>
+            <Button Grid.Row="2" Grid.Column="5" Content="C" Command="{Binding DeleteCharacterCommand}"/>
             <!-- ROW [3] -->
-            <Button Grid.Row="3" Grid.Column="1" Content="Undo"/>
-            <Button Grid.Row="3" Grid.Column="2" Content="π"/>
-            <Button Grid.Row="3" Grid.Column="3" Content="C"/>
-            <Button Grid.Row="3" Grid.Column="4" Content="."/>
-            <Button Grid.Row="3" Grid.Column="5" Content="("/>
+            <Button Grid.Row="3" Grid.Column="1" Content="7"/>
+            <Button Grid.Row="3" Grid.Column="2" Content="8"/>
+            <Button Grid.Row="3" Grid.Column="3" Content="9"/>
+            <Button Grid.Row="3" Grid.Column="4" Content="*"/>
+            <Button Grid.Row="3" Grid.Column="5" Content="CE" Command="{Binding ClearCommand}"/>
             <!-- ROW [4] -->
-            <Button Grid.Row="4" Grid.Column="1" Content="7"/>
-            <Button Grid.Row="4" Grid.Column="2" Content="8"/>
-            <Button Grid.Row="4" Grid.Column="3" Content="9"/>
-            <Button Grid.Row="4" Grid.Column="4" Content="*"/>
-            <Button Grid.Row="4" Grid.Column="5" Content=")"/>
+            <Button Grid.Row="4" Grid.Column="1" Content="4"/>
+            <Button Grid.Row="4" Grid.Column="2" Content="5"/>
+            <Button Grid.Row="4" Grid.Column="3" Content="6"/>
+            <Button Grid.Row="4" Grid.Column="4" Content="+"/>
+            <Button Grid.Row="4" Grid.Column="5" Content="-"/>
             <!-- ROW [5] -->
-            <Button Grid.Row="5" Grid.Column="1" Content="4"/>
-            <Button Grid.Row="5" Grid.Column="2" Content="5"/>
-            <Button Grid.Row="5" Grid.Column="3" Content="6"/>
-            <Button Grid.Row="5" Grid.Column="4" Content="+"/>
-            <Button Grid.Row="5" Grid.Column="5" Content="-"/>
+            <Button Grid.Row="5" Grid.Column="1" Content="1"/>
+            <Button Grid.Row="5" Grid.Column="2" Content="2"/>
+            <Button Grid.Row="5" Grid.Column="3" Content="3"/>
+            <Button Grid.Row="5" Grid.Column="4" Content="/"/>
+            <Button Grid.Row="5" Grid.Column="5" Content="=" Grid.RowSpan="2"  Command="{Binding EqualsCommand}"/>
             <!-- ROW [6] -->
-            <Button Grid.Row="6" Grid.Column="1" Content="1"/>
-            <Button Grid.Row="6" Grid.Column="2" Content="2"/>
-            <Button Grid.Row="6" Grid.Column="3" Content="3"/>
-            <Button Grid.Row="6" Grid.Column="4" Content="/"/>
-            <Button Grid.Row="6" Grid.Column="5" Content="=" Grid.RowSpan="2"  Command="{Binding EqualsCommand}"/>
-            <!-- ROW [7] -->
-            <Button Grid.Row="7" Grid.Column="2" Content="0"/>
-            
+            <Button Grid.Row="6" Grid.Column="2" Content="0"/>
+            <Button Grid.Row="6" Grid.Column="4" Content="."/>
+
         </Grid>
     </DataTemplate>
 </ResourceDictionary>

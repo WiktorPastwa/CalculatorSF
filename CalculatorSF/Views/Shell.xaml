@@ -13,7 +13,8 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" 
         Height="{Binding SelectedCalculatorViewModel.height, Mode=TwoWay}" 
-        Width="{Binding SelectedCalculatorViewModel.width, Mode=TwoWay}">
+        Width="{Binding SelectedCalculatorViewModel.width, Mode=TwoWay}"
+        ResizeMode="NoResize">
 
     <Window.Resources>
         <ResourceDictionary>

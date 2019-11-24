@@ -16,7 +16,7 @@ namespace CalculatorSF.ViewModels.Calculators
 
         #region Properties
         public override string CalculatorType => "Scientific";
-        public override int height { get; set; } = 420;
+        public override int height { get; set; } = 380;
         public override int width { get; set; } = 310;
         public string CalculatedExpression 
         {
